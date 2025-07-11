@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="v_LcMV06TO_iyXSn6uNJzdWxody8LDfqGHVAZ4pW4Ko" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Mathematical Researcher</title>
+    <title>Yue Xu - Mathematical Researcher</title>
     <!-- 引入Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- 引入Font Awesome图标 -->
@@ -12,88 +12,122 @@
     <!-- 自定义样式 -->
     <style>
         :root {
-            --primary-color: #007bff;
-            --secondary-color: #6c757d;
-            --background-color: #f8f9fa;
+            --primary-color: #2c3e50;
+            --secondary-color: #7f8c8d;
+            --background-color: #f5f7fa;
+            --accent-color: #3498db;
         }
 
         body {
             background-color: var(--background-color);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #333;
+            line-height: 1.6;
         }
 
         .container {
             background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-top: 1.5rem;
-            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            margin: 2rem auto;
+            padding: 2rem;
+            max-width: 1000px;
         }
 
         .lang-switch {
             position: fixed;
-            top: 0.6rem;
-            right: 0.6rem;
+            top: 1rem;
+            right: 1rem;
             z-index: 1000;
-            font-size: 0.8rem;
+            background: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .lang-switch button {
+            margin: 0 0.2rem;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.9rem;
         }
 
         .mathjax-container {
-            padding: 0.8rem;
+            padding: 1rem;
             background-color: #f9f9f9;
             border-radius: 6px;
-            margin: 0.4rem 0;
+            margin: 0.8rem 0;
+            border-left: 3px solid var(--accent-color);
         }
 
         .section-title {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            margin: 1.8rem 0 1.2rem;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
         }
 
         .note-card {
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-            border: 0.8px solid #e9ecef;
-            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
         }
 
         .note-card:hover {
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
         }
 
         .pdf-icon {
             transition: all 0.2s ease;
-            font-size: 1em;
-            color: #e63946;
-        }
-
-        .pdf-icon:hover {
-            color: #c1121f;
-            transform: scale(1.1);
-        }
-
-        .py-15 {
-            padding-top: 0.375rem;
-            padding-bottom: 0.375rem;
-        }
-
-        .text-xs {
-            font-size: 0.7rem;
-        }
-
-        /* 新增照片样式 */
-        .profile-photo {
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            max-width: 80%;
-            height: auto;
+            font-size: 1.1em;
+            color: #e74c3c;
             margin-left: 0.5rem;
         }
 
+        .pdf-icon:hover {
+            color: #c0392b;
+            transform: scale(1.15);
+        }
+
+        .profile-photo {
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            max-width: 90%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .academic-link {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .academic-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .email {
+            font-family: 'Courier New', monospace;
+        }
+
         @media (max-width: 768px) {
-            .profile-photo {
-                margin-left: 0;
-                margin-top: 0.5rem;
+            .container {
+                padding: 1.2rem;
+                margin: 1rem 0.5rem;
+            }
+
+            .profile-col {
+                margin-top: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+                margin: 1.5rem 0 1rem;
             }
         }
     </style>
@@ -103,158 +137,128 @@
 <body>
     <!-- 语言切换按钮 -->
     <div class="lang-switch">
-        <button class="btn btn-secondary btn-xs" onclick="switchLanguage('en-US')">
-            <i class="fa fa-globe"></i> En
+        <button class="btn btn-outline-secondary btn-sm" onclick="switchLanguage('en-US')">
+            <i class="fa fa-globe"></i> English
         </button>
-        <button class="btn btn-primary btn-xs" onclick="switchLanguage('zh-CN')">
-            <i class="fa fa-language"></i> 中
+        <button class="btn btn-secondary btn-sm" onclick="switchLanguage('zh-CN')">
+            <i class="fa fa-language"></i> 中文
         </button>
     </div>
 
     <div class="container">
-        <!-- 个人信息区域 -->
-        <div class="row mb-3">
-            <div class="col-md-12 text-center">
-                <h1 class="mt-1 section-title">
+        <!-- 个人信息头部 -->
+        <div class="row">
+            <div class="col-md-8">
+                <h1>
                     <span class="chinese-content">许跃</span>
                     <span class="english-content">Yue Xu</span>
                 </h1>
+                <p class="chinese-content" style="display: none;">
+                    华山准聘副教授 | 西安电子科技大学 数学与统计学院
+                </p>
+                <p class="english-content">
+                    Lecturer | School of Mathematics and Statistics, Xidian University
+                </p>
+                <p>
+                    <span class="chinese-content email" style="display: none;">电子邮箱: xuyue [at] xidian.edu.cn</span>
+                    <span class="english-content email">Email: xuyue [at] xidian.edu.cn</span>
+                </p>
+            </div>
+            <div class="col-md-4 profile-col d-flex justify-content-center">
+                <img src="yx.jpg" alt="Yue Xu" class="profile-photo">
             </div>
         </div>
 
-        <!-- 工作信息 -->
-        <div class="row mb-3">
+        <!-- 关于我 -->
+        <div class="row">
             <div class="col-md-12">
-                <h2 class="section-title text-md">
-                    <span class="chinese-content">工作信息</span>
+                <h2 class="section-title">
+                    <span class="chinese-content">个人信息</span>
                     <span class="english-content">About Me</span>
                 </h2>
-                <!-- 使用网格布局容纳内容和照片 -->
-                <div class="row">
-                    <!-- 左侧内容区域 -->
-                    <div class="col-md-8">
-                        <div class="chinese-content text-sm" style="display: none;">
-                            <p><strong>当前就职：</strong> 西安电子科技大学，数学与统计学院</p>
-                            <p><strong>办公地址：</strong> 中国陕西省西安市西沣路兴隆段266号</p>
-                            <p><strong>电子邮箱：</strong>xuyue艾特xidian点edu点cn</p>
-                        </div>
-                        <div class="english-content text-sm">
-                            <p><strong>Current Employer:</strong> Xidian University，School of Mathematics and Statistics</p>
-                            <p><strong>Office Address:</strong> 266 Xinglong Section of Xifeng Road, Xi'an, Shaanxi, China</p>
-                            <p><strong>Email:</strong> xuyue"at"xidian"dot"edu"dot"cn</p>
-                        </div>
-                         
-                <h2 class="section-title text-md">
-                    <span class="chinese-content">教育背景</span>
-                    <span class="english-content">Education</span>
-                </h2>
-                <div class="chinese-content text-sm" style="display: none;">
+                <div class="chinese-content" style="display: none;">
+                    <p>我的研究方向为数论与算术统计，主要关注数域的理想类群、椭圆曲线的算术性质及其分布规律，包括Cohen-Lenstra猜想等问题。</p>
+                    
+                    <p><strong>教育背景：</strong></p>
                     <ul>
-                        <li><strong>博士后</strong> - 晨兴数学中心，中国科学院数学与系统科学研究院，2021-2024</li>
-                        <li><strong>博士学位</strong> - 基础数学，中国科学技术大学，2015-2021</li>
-                        <li><strong>学士学位</strong> - 数学与应用数学，西安电子科技大学，2011-2015</li>
+                        <li>2021-2024年，博士后，中国科学院晨兴数学中心，合作导师：田野</li>
+                        <li>2015-2021年，博士，中国科学技术大学，导师：欧阳毅</li>
+                        <li>2011-2015年，学士，西安电子科技大学</li>
                     </ul>
                 </div>
-                <div class="english-content text-sm">
+                <div class="english-content">
+                    <p>My research interests lie in Number Theory and Arithmetic Statistics, focusing on arithmetic properties of ideal class groups of number fields, elliptic curves, and their distribution, including problems related to the Cohen-Lenstra heuristics.</p>
+                    
+                    <p><strong>Education：</strong></p>
                     <ul>
-                        <li><strong>Post.Doc.</strong> Morningside Center of Mathematics，Chinese Academy of Sciences, 2021-2024</li>
-                        <li><strong>Ph.D.</strong> in Pure Mathematics, University of Science and Technology of China, 2015-2021</li>
-                        <li><strong>B.S.</strong> in Mathematics and Applied Mathematics,  Xidian University, 2011-2015</li>
+                        <li>2021-2024, Postdoctoral Fellow, Morningside Center of Mathematics, Chinese Academy of Sciences (Mentor: Ye Tian)</li>
+                        <li>2015-2021, Ph.D. in Pure Mathematics, University of Science and Technology of China (Advisor: Yi Ouyang)</li>
+                        <li>2011-2015, B.S. in Mathematics, Xidian University</li>
                     </ul>
-                </div>
-
-                 <h2 class="section-title text-md">
-                    <span class="chinese-content">研究领域</span>
-                    <span class="english-content">Research Areas</span>
-                </h2>
-                <div class="chinese-content text-sm" style="display: none;">
-                    <ul>
-                        <li>数论 / 算术统计</li> 主要研究数域上理想类群以及椭圆曲线的相关算术问题及其统计规律，包括Cohen-Lenstra 猜想等问题。
-                    </ul>
-                </div>
-                <div class="english-content text-sm">
-                    <ul>
-                        <li>Number Theory / Arithmetic Statistics</li> The research mainly focuses on arithmetic problems related to ideal class groups over number fields and elliptic curves, as well as their distribution, including problems such as the Cohen-Lenstra heuristics.
-                    </ul>
-                </div>
-             
-                    </div>
-                    <!-- 右侧照片区域 -->
-                    <div class="col-md-4 d-flex justify-content-center">
-                        <img src="yx.jpg" alt="Profile Photo" class="profile-photo">
-                    </div>
                 </div>
             </div>
         </div>
 
-
-
-
-        <!-- 论文发表（带PDF图标） -->
-        <div class="row mb-3">
+        <!-- 论文发表 -->
+        <div class="row">
             <div class="col-md-12">
-                <h2 class="section-title text-md">
+                <h2 class="section-title">
                     <span class="chinese-content">论文发表</span>
                     <span class="english-content">Publications</span>
                 </h2>
-                <div class="chinese-content text-sm" style="display: none;">
+                <div class="chinese-content" style="display: none;">
                     <p>按时间倒序排列的代表性论文：</p>
                     <ul>
                         <li>
-                            <strong>Error term in the Cohen-Lenstra heuristic via random matrix approach</strong> (with Xiuwu Zhu) - SCIENCE CHINA-MATHEMATICS, 2025, online
-                            <a href="https://www.sciengine.com/SCM/doi/10.1007/s11425-024-2455-y" target="_blank" class="pdf-icon ml-1">
+                            <strong>Error term in the Cohen-Lenstra heuristic via random matrix approach</strong> (与朱秀武合作) - 《中国科学：数学 (英文版)》, 2025, 在线发表
+                            <a href="https://www.sciengine.com/SCM/doi/10.1007/s11425-024-2455-y" target="_blank" class="pdf-icon" title="查看PDF">
                                 <i class="fa fa-file-pdf-o"></i>
                             </a>
                         </li>
                         <li>
-                            <strong>On abelian 2-ramification torsion modules of quadratic
-fields</strong> (with Jianing Li and Yi Ouyang) - SCIENCE CHINA-MATHEMATICS, 2022, 65(12): 2459-2482
-                            <a href="https://link.springer.com/article/10.1007/s11425-021-1946-0" target="_blank" class="pdf-icon ml-1">
+                            <strong>On abelian 2-ramification torsion modules of quadratic fields</strong> (与李加宁、欧阳毅合作) - 《中国科学：数学 (英文版)》, 2022, 65(12): 2459-2482
+                            <a href="https://link.springer.com/article/10.1007/s11425-021-1946-0" target="_blank" class="pdf-icon" title="查看PDF">
                                 <i class="fa fa-file-pdf-o"></i>
                             </a>
                         </li>
                         <li>
-                            <strong><i>l</i>-Class groups of fields in Kummer towers</strong> (with Jianing Li, Yi Ouyang and Shenxing Zhang) - PUBLICACIONS MATEMATIQUES, 2022, 66(1): 235-267
-                            <a href="https://projecteuclid.org/journals/publicacions-matematiques/volume-66/issue-1/ell-class-groups-of-fields-in-Kummer-towers/10.5565/PUBLMAT6612210.short" target="_blank" class="pdf-icon ml-1">
+                            <strong><i>l</i>-class groups of fields in Kummer towers</strong> (与李加宁、欧阳毅、张神星合作) - 《Publicacions Matemàtiques》, 2022, 66(1): 235-267
+                            <a href="https://projecteuclid.org/journals/publicacions-matematiques/volume-66/issue-1/ell-class-groups-of-fields-in-Kummer-towers/10.5565/PUBLMAT6612210.short" target="_blank" class="pdf-icon" title="查看PDF">
                                 <i class="fa fa-file-pdf-o"></i>
                             </a>
                         </li>
                         <li>
-                            <strong>On class numbers of pure quartic fields</strong> (with Jianing Li) - RAMANUJAN JOURNAL，2021,
-56(1): 235-248
-                            <a href="https://link.springer.com/article/10.1007/s11139-020-00253-2" target="_blank" class="pdf-icon ml-1">
+                            <strong>On class numbers of pure quartic fields</strong> (与李加宁合作) - 《Ramanujan Journal》，2021, 56(1): 235-248
+                            <a href="https://link.springer.com/article/10.1007/s11139-020-00253-2" target="_blank" class="pdf-icon" title="查看PDF">
                                 <i class="fa fa-file-pdf-o"></i>
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="english-content text-sm">
+                <div class="english-content">
                     <p>Selected publications (in reverse chronological order):</p>
                     <ul>
                         <li>
-                            <strong>Error term in the Cohen-Lenstra heuristic via random matrix approach</strong> (with Xiuwu Zhu) - SCIENCE CHINA-MATHEMATICS, 2025, online
-                            <a href="https://www.sciengine.com/SCM/doi/10.1007/s11425-024-2455-y" target="_blank" class="pdf-icon ml-1">
-                                <i class="fa fa-file-pdf-o"></i>
-                            </a>
-                        </li>
-                               <li>
-                            <strong>On abelian 2-ramification torsion modules of quadratic
-fields</strong> (with Jianing Li and Yi Ouyang) - SCIENCE CHINA-MATHEMATICS, 2022, 65(12): 2459-2482
-                            <a href="https://link.springer.com/article/10.1007/s11425-021-1946-0" target="_blank" class="pdf-icon ml-1">
+                            <strong>Error term in the Cohen-Lenstra heuristic via random matrix approach</strong> (with Xiuwu Zhu) - <em>SCIENCE CHINA-MATHEMATICS</em>, 2025, online
+                            <a href="https://www.sciengine.com/SCM/doi/10.1007/s11425-024-2455-y" target="_blank" class="pdf-icon" title="View PDF">
                                 <i class="fa fa-file-pdf-o"></i>
                             </a>
                         </li>
                         <li>
-                            <strong><i>l</i>-class groups of fields in
-Kummer towers</strong> (with Jianing Li, Yi Ouyang and Shenxing Zhang) - PUBLICACIONS MATEMATIQUES, 2022, 66(1): 235-267
-                            <a href="https://projecteuclid.org/journals/publicacions-matematiques/volume-66/issue-1/ell-class-groups-of-fields-in-Kummer-towers/10.5565/PUBLMAT6612210.short" target="_blank" class="pdf-icon ml-1">
+                            <strong>On abelian 2-ramification torsion modules of quadratic fields</strong> (with Jianing Li and Yi Ouyang) - <em>SCIENCE CHINA-MATHEMATICS</em>, 2022, 65(12): 2459-2482
+                            <a href="https://link.springer.com/article/10.1007/s11425-021-1946-0" target="_blank" class="pdf-icon" title="View PDF">
                                 <i class="fa fa-file-pdf-o"></i>
                             </a>
                         </li>
                         <li>
-                            <strong>On class numbers of pure quartic fields</strong> (with Jianing Li) - RAMANUJAN JOURNAL，2021,
-56(1): 235-248
-                            <a href="https://link.springer.com/article/10.1007/s11139-020-00253-2" target="_blank" class="pdf-icon ml-1">
+                            <strong><i>l</i>-class groups of fields in Kummer towers</strong> (with Jianing Li, Yi Ouyang and Shenxing Zhang) - <em>PUBLICACIONS MATEMATIQUES</em>, 2022, 66(1): 235-267
+                            <a href="https://projecteuclid.org/journals/publicacions-matematiques/volume-66/issue-1/ell-class-groups-of-fields-in-Kummer-towers/10.5565/PUBLMAT6612210.short" target="_blank" class="pdf-icon" title="View PDF">
+                                <i class="fa fa-file-pdf-o"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <strong>On class numbers of pure quartic fields</strong> (with Jianing Li) - <em>RAMANUJAN JOURNAL</em>, 2021, 56(1): 235-248
+                            <a href="https://link.springer.com/article/10.1007/s11139-020-00253-2" target="_blank" class="pdf-icon" title="View PDF">
                                 <i class="fa fa-file-pdf-o"></i>
                             </a>
                         </li>
@@ -264,83 +268,78 @@ Kummer towers</strong> (with Jianing Li, Yi Ouyang and Shenxing Zhang) - PUBLICA
         </div>
 
         <!-- 授课情况 -->
-        <div class="row mb-3">
+        <div class="row">
             <div class="col-md-12">
-                <h2 class="section-title text-md">
+                <h2 class="section-title">
                     <span class="chinese-content">授课情况</span>
                     <span class="english-content">Teaching</span>
                 </h2>
-                <div class="chinese-content text-sm" style="display: none;">
+                <div class="chinese-content" style="display: none;">
                     <ul>
-                        <li><strong>本科生课程</strong>：高等代数I (2025 秋)</li>
+                        <li><strong>本科生课程</strong>：高等代数I（2025年秋季学期）</li>
                     </ul>
                 </div>
-                <div class="english-content text-sm">
+                <div class="english-content">
                     <ul>
-                        <li><strong>Undergraduate Courses</strong>: Linear Algebra I (2025 fall)</li>
+                        <li><strong>Undergraduate Courses</strong>: Linear Algebra I (Fall 2025)</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- 学术笔记 -->
-        <div class="row mb-3">
+        <div class="row">
             <div class="col-md-12">
-                <h2 class="section-title text-md">
+                <h2 class="section-title">
                     <span class="chinese-content">随笔</span>
                     <span class="english-content">Notes</span>
                 </h2>
                 <div class="chinese-content" style="display: none;">
-                    <div class="mb-2 note-card">
-                        <button class="w-100 btn btn-white d-flex justify-content-between align-items-center py-15" data-bs-toggle="collapse" data-bs-target="#note1-zh">
-                            <h6 class="mb-0 text-xs font-weight-medium text-left">无</h6>
-                            <span class="fa fa-chevron-down text-gray-400 text-xs"></span>
+                    <div class="note-card">
+                        <button class="w-100 btn btn-white d-flex justify-content-between align-items-center py-2" 
+                                data-bs-toggle="collapse" data-bs-target="#note1-zh">
+                            <h6 class="mb-0 font-weight-medium text-left">有趣的事实</h6>
+                            <span class="fa fa-chevron-down text-gray-400"></span>
                         </button>
-                        <div id="note1-zh" class="collapse mathjax-container text-xs">
-                            <p>暂时</p>
-                            \[
-                            x^2+y^2=z^2
-                            \]
+                        <div id="note1-zh" class="collapse mathjax-container">
+                            <p>对于任意素数\(p\),  \( \prod\limits_{i=1}^{\infty}(1-p^{-i}) \) 是超越数。 </p>
                         </div>
                     </div>
-             </div>
-               
-             <div class="english-content">
-                    <div class="mb-2 note-card">
-                        <button class="w-100 btn btn-white d-flex justify-content-between align-items-center py-15" data-bs-toggle="collapse" data-bs-target="#note1-en">
-                            <h6 class="mb-0 text-xs font-weight-medium text-left">None</h6>
-                            <span class="fa fa-chevron-down text-gray-400 text-xs"></span>
+                </div>
+                <div class="english-content">
+                    <div class="note-card">
+                        <button class="w-100 btn btn-white d-flex justify-content-between align-items-center py-2" 
+                                data-bs-toggle="collapse" data-bs-target="#note1-en">
+                            <h6 class="mb-0 font-weight-medium text-left">Funny Facts</h6>
+                            <span class="fa fa-chevron-down text-gray-400"></span>
                         </button>
-                        <div id="note1-en" class="collapse mathjax-container text-xs">
-                            <p>Nothing</p>
-                            \[
-                           x^2+y^2=z^2
-                            \]
+                        <div id="note1-en" class="collapse mathjax-container">
+                            <p>For any prime \( p \), \( \prod\limits_{i=1}^{\infty}(1-p^{-i}) \) is transcendental. </p>
                         </div>
-                  </div>
-             </div>
-         </div>
-     </div>
-   
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- 有用链接 -->
-        <div class="row mb-3">
+        <div class="row">
             <div class="col-md-12">
-                <h2 class="section-title text-md">
+                <h2 class="section-title">
                     <span class="chinese-content">有用链接</span>
                     <span class="english-content">Useful Links</span>
                 </h2>
-                <div class="chinese-content text-sm" style="display: none;">
+                <div class="chinese-content" style="display: none;">
                     <ul>
-                        <li><a href="https://mathscinet.ams.org" target="_blank"><i class="fa fa-book mr-1"></i> MathSciNet</a> - 数学文献数据库</li>
-                        <li><a href="https://arxiv.org/list/math.NT/recent" target="_blank"><i class="fa fa-file-text-o mr-1"></i> arXiv NT</a> - 预印本服务器</li>
-                        <li><a href="https://github.com/" target="_blank"><i class="fa fa-globe mr-1"></i> GitHub</a></li>
+                        <li><a href="https://mathscinet.ams.org" target="_blank" class="academic-link"><i class="fa fa-book mr-1"></i> MathSciNet</a> - 数学文献数据库</li>
+                        <li><a href="https://arxiv.org/list/math.NT/recent" target="_blank" class="academic-link"><i class="fa fa-file-text-o mr-1"></i> arXiv: 数论</a> - 预印本服务器</li>
+                        <li><a href="https://github.com/" target="_blank" class="academic-link"><i class="fa fa-globe mr-1"></i> GitHub</a></li>
                     </ul>
                 </div>
-                <div class="english-content text-sm">
+                <div class="english-content">
                     <ul>
-                        <li><a href="https://mathscinet.ams.org" target="_blank"><i class="fa fa-book mr-1"></i> MathSciNet</a> - Mathematical literature database</li>
-                        <li><a href="https://arxiv.org/list/math.NT/recent" target="_blank"><i class="fa fa-file-text-o mr-1"></i> arXiv NT</a> - Preprint server</li>
-                        <li><a href="https://github.com/" target="_blank"><i class="fa fa-globe mr-1"></i> GitHub</a></li>
+                        <li><a href="https://mathscinet.ams.org" target="_blank" class="academic-link"><i class="fa fa-book mr-1"></i> MathSciNet</a> - Mathematical literature database</li>
+                        <li><a href="https://arxiv.org/list/math.NT/recent" target="_blank" class="academic-link"><i class="fa fa-file-text-o mr-1"></i> arXiv: Number Theory</a> - Preprint server</li>
+                        <li><a href="https://github.com/" target="_blank" class="academic-link"><i class="fa fa-globe mr-1"></i> GitHub</a></li>
                     </ul>
                 </div>
             </div>
@@ -350,17 +349,25 @@ Kummer towers</strong> (with Jianing Li, Yi Ouyang and Shenxing Zhang) - PUBLICA
     <!-- 语言切换脚本 -->
     <script>
         function switchLanguage(lang) {
-            document.querySelectorAll('.chinese-content, .english-content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.chinese-content, .english-content').forEach(el => {
+                el.style.display = 'none';
+            });
+
             if (lang === 'zh-CN') {
-                document.querySelectorAll('.chinese-content').forEach(el => el.style.display = 'block');
-                document.title = '许跃';
+                document.querySelectorAll('.chinese-content').forEach(el => {
+                    el.style.display = 'block';
+                });
+                document.title = '许跃 - 西安电子科技大学';
             } else {
-                document.querySelectorAll('.english-content').forEach(el => el.style.display = 'block');
-                document.title = 'Yue Xu';
+                document.querySelectorAll('.english-content').forEach(el => {
+                    el.style.display = 'block';
+                });
+                document.title = 'Yue Xu - Xidian University';
             }
             MathJax.typesetPromise();
         }
-        window.onload = () => switchLanguage('en-US'); // 初始化显示英文
+        // 初始化显示英文
+        window.onload = () => switchLanguage('en-US');
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
