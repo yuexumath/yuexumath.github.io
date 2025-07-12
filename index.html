@@ -34,21 +34,36 @@
             max-width: 1000px;
         }
 
+        /* 优化后的语言切换按钮样式 */
         .lang-switch {
             position: fixed;
             top: 1rem;
             right: 1rem;
             z-index: 1000;
+            display: flex;
             background: white;
             padding: 0.3rem 0.6rem;
             border-radius: 4px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
-
+        
         .lang-switch button {
             margin: 0 0.2rem;
             padding: 0.2rem 0.5rem;
             font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+        
+        .lang-switch button.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .lang-switch button:not(.active):hover {
+            background-color: rgba(44, 62, 80, 0.1);
+            border-color: rgba(44, 62, 80, 0.2);
         }
 
         .mathjax-container {
@@ -135,13 +150,13 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
-    <!-- 语言切换按钮 -->
+    <!-- 优化后的语言切换按钮 -->
     <div class="lang-switch">
-        <button class="btn btn-outline-secondary btn-sm" onclick="switchLanguage('en-US')">
-            <i class="fa fa-globe"></i> English
+        <button class="btn btn-outline-secondary btn-sm active" id="btn-en" onclick="switchLanguage('en-US')">
+            <i class="fa fa-globe mr-1"></i> English
         </button>
-        <button class="btn btn-secondary btn-sm" onclick="switchLanguage('zh-CN')">
-            <i class="fa fa-language"></i> 中文
+        <button class="btn btn-outline-secondary btn-sm" id="btn-zh" onclick="switchLanguage('zh-CN')">
+            <i class="fa fa-language mr-1"></i> 中文
         </button>
     </div>
 
@@ -165,8 +180,8 @@
                 </p>
             </div>
             <div class="col-md-4 profile-col d-flex justify-content-center">
-        <img src="dog.jpg" alt="许跃（中文照片）" class="profile-photo chinese-content" style="display: none;">
-        <img src="yx.jpg" alt="Yue Xu（英文照片）" class="profile-photo english-content">
+                <img src="dog.jpg" alt="许跃（中文照片）" class="profile-photo chinese-content" style="display: none;">
+                <img src="yx.jpg" alt="Yue Xu（英文照片）" class="profile-photo english-content">
             </div>
         </div>
 
@@ -347,26 +362,36 @@
         </div>
     </div>
 
-    <!-- 语言切换脚本 -->
+    <!-- 优化后的语言切换脚本 -->
     <script>
         function switchLanguage(lang) {
+            // 隐藏所有内容
             document.querySelectorAll('.chinese-content, .english-content').forEach(el => {
                 el.style.display = 'none';
             });
 
+            // 根据选择显示对应语言内容
             if (lang === 'zh-CN') {
                 document.querySelectorAll('.chinese-content').forEach(el => {
                     el.style.display = 'block';
                 });
                 document.title = '许跃 - 西安电子科技大学';
+                // 更新按钮状态
+                document.getElementById('btn-zh').classList.add('active');
+                document.getElementById('btn-en').classList.remove('active');
             } else {
                 document.querySelectorAll('.english-content').forEach(el => {
                     el.style.display = 'block';
                 });
                 document.title = 'Yue Xu - Xidian University';
+                // 更新按钮状态
+                document.getElementById('btn-en').classList.add('active');
+                document.getElementById('btn-zh').classList.remove('active');
             }
+            // 重新渲染数学公式
             MathJax.typesetPromise();
         }
+        
         // 初始化显示英文
         window.onload = () => switchLanguage('en-US');
     </script>
