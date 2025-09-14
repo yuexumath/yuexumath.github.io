@@ -1,0 +1,34 @@
+
+   <!-- 学术笔记 -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title">
+                    <span class="chinese-content">笔记</span>
+                    <span class="english-content">Notes</span>
+                </h2>
+                <div class="chinese-content" style="display: none;">
+                    <div class="note-card">
+                        <button class="w-100 btn btn-white d-flex justify-content-between align-items-center py-2" 
+                                data-bs-toggle="collapse" data-bs-target="#note1-zh">
+                            <h6 class="mb-0 font-weight-medium text-left">有趣的事实</h6>
+                            <span class="fa fa-chevron-down text-gray-400"></span>
+                        </button>
+                        <div id="note1-zh" class="collapse mathjax-container">
+                            <p>\(1+1=2\) </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="english-content">
+                    <div class="note-card">
+                        <button class="w-100 btn btn-white d-flex justify-content-between align-items-center py-2" 
+                                data-bs-toggle="collapse" data-bs-target="#note1-en">
+                            <h6 class="mb-0 font-weight-medium text-left">Funny Facts</h6>
+                            <span class="fa fa-chevron-down text-gray-400"></span>
+                        </button>
+                        <div id="note1-en" class="collapse mathjax-container">
+                            <p>\(1+1=2\) </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
