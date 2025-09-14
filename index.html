@@ -16,15 +16,16 @@
             --secondary-color: #7f8c8d;
             --background-color: #f5f7fa;
             --accent-color: #3498db;
+            --accent-light: #e3f2fd; /* 浅 accent 色，用于hover背景 */
+            --separator-color: #e0e0e0; /* 分隔符淡色，更精致 */
+            --link-color: #6495ED; /* 灰蓝色链接 */
         }
-
         body {
             background-color: var(--background-color);
             font-family: 'Georgia', 'Times New Roman', serif;
             color: #333;
             line-height: 1.6;
         }
-
         .container {
             background-color: white;
             border-radius: 8px;
@@ -33,8 +34,7 @@
             padding: 2rem;
             max-width: 1000px;
         }
-
-        /* 优化后的语言切换按钮样式 */
+        /* 语言切换按钮样式 */
         .lang-switch {
             position: fixed;
             top: 1rem;
@@ -65,7 +65,6 @@
             background-color: rgba(44, 62, 80, 0.1);
             border-color: rgba(44, 62, 80, 0.2);
         }
-
         .mathjax-container {
             padding: 1rem;
             background-color: #f9f9f9;
@@ -73,7 +72,6 @@
             margin: 0.8rem 0;
             border-left: 3px solid var(--accent-color);
         }
-
         .section-title {
             margin: 1.8rem 0 1.2rem;
             font-size: 1.5rem;
@@ -82,7 +80,6 @@
             padding-bottom: 0.5rem;
             border-bottom: 1px solid #eee;
         }
-
         .note-card {
             transition: all 0.3s ease;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -90,24 +87,20 @@
             border-radius: 6px;
             margin-bottom: 0.8rem;
         }
-
         .note-card:hover {
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transform: translateY(-2px);
         }
-
         .pdf-icon {
             transition: all 0.2s ease;
             font-size: 1.1em;
             color: #e74c3c;
             margin-left: 0.5rem;
         }
-
         .pdf-icon:hover {
             color: #c0392b;
             transform: scale(1.15);
         }
-
         .profile-photo {
             border-radius: 6px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.15);
@@ -115,34 +108,95 @@
             height: auto;
             margin: 0 auto;
         }
-
-        .academic-link {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        .academic-link:hover {
-            color: #2980b9;
-            text-decoration: underline;
-        }
-
         .email {
             font-family: 'Courier New', monospace;
         }
-
+        .office-location {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .counter-container {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        /* 同行学者模块精致化样式 */
+        .colleagues-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem; /* 增大间距，避免拥挤 */
+            align-items: center;
+            margin-top: 0.5rem;
+            padding: 0.5rem 0; /* 上下留白，提升层次感 */
+        }
+        /* 学者链接：标签式设计 */
+        .academic-link-colleague {
+            display: inline-block;
+            padding: 0.35rem 0.9rem; /* 内边距，形成标签感 */
+            border-radius: 20px; /* 圆角，更柔和 */
+            color: #4a6fa5; /* 加深的颜色 */
+            background-color: transparent;
+            text-decoration: none;
+            transition: all 0.25s ease; /* 过渡动画，更流畅 */
+            font-size: 0.95rem;
+        }
+        .academic-link-colleague:hover {
+            color: var(--primary-color);
+            background-color: var(--accent-light); /* 浅背景，不刺眼 */
+            text-decoration: none;
+            transform: translateY(-1px); /* 轻微上浮，提升交互感 */
+        }
+        /* 分隔符：淡色细线条，更精致 */
+        .colleague-separator {
+            color: var(--separator-color);
+            font-size: 0.8rem;
+            margin: 0 0.2rem;
+        }
+        /* 隐藏计数器的广告链接 */
+        .hitwebcounter > a {
+            display: none !important;
+        }
+        /* 链接样式 - 灰蓝色，图标黑色 */
+        .academic-link {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .academic-link i {
+            color: #000; /* 图标黑色 */
+        }
+        .academic-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
         @media (max-width: 768px) {
             .container {
                 padding: 1.2rem;
                 margin: 1rem 0.5rem;
             }
-
             .profile-col {
                 margin-top: 1.5rem;
             }
-
             .section-title {
                 font-size: 1.3rem;
                 margin: 1.5rem 0 1rem;
+            }
+            /* 移动端：垂直排列，每个链接占满宽度 */
+            .colleagues-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.6rem;
+            }
+            .academic-link-colleague {
+                width: 100%;
+                text-align: center;
+                padding: 0.4rem;
+            }
+            .colleague-separator {
+                display: none; /* 移动端隐藏分隔符 */
             }
         }
     </style>
@@ -150,7 +204,7 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
-    <!-- 优化后的语言切换按钮 -->
+    <!-- 语言切换按钮 -->
     <div class="lang-switch">
         <button class="btn btn-outline-secondary btn-sm active" id="btn-en" onclick="switchLanguage('en-US')">
             <i class="fa fa-globe mr-1"></i> English
@@ -159,7 +213,6 @@
             <i class="fa fa-language mr-1"></i> 中文
         </button>
     </div>
-
     <div class="container">
         <!-- 个人信息头部 -->
         <div class="row">
@@ -178,13 +231,21 @@
                     <span class="chinese-content email" style="display: none;">电子邮箱: xuyue [at] xidian.edu.cn</span>
                     <span class="english-content email">Email: xuyue [at] xidian.edu.cn</span>
                 </p>
+                <!-- 办公地点 -->
+                <p class="office-location">
+                    <span class="chinese-content" style="display: none;">
+                        <i class="fa fa-map-marker mr-1 text-secondary"></i> 南校区：陕西省西安市西沣路兴隆段266号
+                    </span>
+                    <span class="english-content">
+                        <i class="fa fa-map-marker mr-1 text-secondary"></i> South Campus: 266 Xinglong Section of Xifeng Road, Xi’an, Shaanxi 
+                    </span>
+                </p>
             </div>
             <div class="col-md-4 profile-col d-flex justify-content-center">
-                <img src="dog.jpg" alt="许跃（中文照片）" class="profile-photo chinese-content" style="display: none;">
+                <img src="yx.jpg" alt="许跃（中文照片）" class="profile-photo chinese-content" style="display: none;">
                 <img src="yx.jpg" alt="Yue Xu（英文照片）" class="profile-photo english-content">
             </div>
         </div>
-
         <!-- 关于我 -->
         <div class="row">
             <div class="col-md-12">
@@ -214,7 +275,6 @@
                 </div>
             </div>
         </div>
-
         <!-- 论文发表 -->
         <div class="row">
             <div class="col-md-12">
@@ -240,6 +300,12 @@
                         <li>
                             <strong><i>l</i>-class groups of fields in Kummer towers</strong> (与李加宁、欧阳毅、张神星合作) - 《Publicacions Matemàtiques》, 2022, 66(1): 235-267
                             <a href="https://projecteuclid.org/journals/publicacions-matematiques/volume-66/issue-1/ell-class-groups-of-fields-in-Kummer-towers/10.5565/PUBLMAT6612210.short" target="_blank" class="pdf-icon" title="查看PDF">
+                                <i class="fa fa-file-pdf-o"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <strong>阿贝尔p分歧扭子群和新Cohen-Lenstra 猜想</strong> (与李加宁、欧阳毅合作) - 《中国科学：数学》, 2021, 51(10): 1635
+                            <a href="https://doi.org/10.1360/SSM-2020-0294" target="_blank" class="pdf-icon" title="查看PDF">
                                 <i class="fa fa-file-pdf-o"></i>
                             </a>
                         </li>
@@ -273,6 +339,12 @@
                             </a>
                         </li>
                         <li>
+                            <strong>Abelian p-ramification groups and new Cohen-Lenstra heuristics</strong> (with Jianing Li, Yi Ouyang) - <em>SCIENTIA SINICA Mathematica</em>, 2021, 51(10): 1635
+                            <a href="https://doi.org/10.1360/SSM-2020-0294" target="_blank" class="pdf-icon" title="View PDF">
+                                <i class="fa fa-file-pdf-o"></i>
+                            </a>
+                        </li>
+                        <li>
                             <strong>On class numbers of pure quartic fields</strong> (with Jianing Li) - <em>RAMANUJAN JOURNAL</em>, 2021, 56(1): 235-248
                             <a href="https://link.springer.com/article/10.1007/s11139-020-00253-2" target="_blank" class="pdf-icon" title="View PDF">
                                 <i class="fa fa-file-pdf-o"></i>
@@ -282,7 +354,6 @@
                 </div>
             </div>
         </div>
-
         <!-- 授课情况 -->
         <div class="row">
             <div class="col-md-12">
@@ -292,22 +363,39 @@
                 </h2>
                 <div class="chinese-content" style="display: none;">
                     <ul>
-                        <li><strong>本科生课程</strong>：高等代数I（2025年秋季学期）</li>
+                        <li><strong>本科生课程</strong>：
+                            <ul>
+                                <li>高等代数I（2025年秋季学期）</li>
+                            </ul>
+                        </li>
+                        <li><strong>研究生课程</strong>：
+                            <ul>
+                                <li>抽象代数（2025年秋季学期）</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="english-content">
                     <ul>
-                        <li><strong>Undergraduate Courses</strong>: Linear Algebra I (Fall 2025)</li>
+                        <li><strong>Undergraduate Courses</strong>:
+                            <ul>
+                                <li>Advanced Algebra I (Fall 2025)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Graduate Courses</strong>:
+                            <ul>
+                                <li>Advanced Modern Algebra (Fall 2025)</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <!-- 学术笔记 -->
         <div class="row">
             <div class="col-md-12">
                 <h2 class="section-title">
-                    <span class="chinese-content">随笔</span>
+                    <span class="chinese-content">笔记</span>
                     <span class="english-content">Notes</span>
                 </h2>
                 <div class="chinese-content" style="display: none;">
@@ -318,7 +406,7 @@
                             <span class="fa fa-chevron-down text-gray-400"></span>
                         </button>
                         <div id="note1-zh" class="collapse mathjax-container">
-                            <p>对于任意素数\(p\),  \( \prod\limits_{i=1}^{\infty}(1-p^{-i}) \) 是超越数。 </p>
+                            <p>\(1+1=2\) </p>
                         </div>
                     </div>
                 </div>
@@ -330,19 +418,18 @@
                             <span class="fa fa-chevron-down text-gray-400"></span>
                         </button>
                         <div id="note1-en" class="collapse mathjax-container">
-                            <p>For any prime \( p \), \( \prod\limits_{i=1}^{\infty}(1-p^{-i}) \) is transcendental. </p>
+                            <p>\(1+1=2\) </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- 有用链接 -->
         <div class="row">
             <div class="col-md-12">
                 <h2 class="section-title">
-                    <span class="chinese-content">有用链接</span>
-                    <span class="english-content">Useful Links</span>
+                    <span class="chinese-content">链接</span>
+                    <span class="english-content">Links</span>
                 </h2>
                 <div class="chinese-content" style="display: none;">
                     <ul>
@@ -360,16 +447,74 @@
                 </div>
             </div>
         </div>
+        <!-- 传送门（原同行学者链接） -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title">
+                    <span class="chinese-content">传送门</span>
+                    <span class="english-content">Portals</span>
+                </h2>
+                <!-- 中文版本：合并用户提供的中文名字，按拼音顺序排列 -->
+                <div class="chinese-content" style="display: none;">
+                    <div class="colleagues-container">
+                        <a href="https://ams.cnu.edu.cn/english/People/Faculty/ed036a06808940889455279e07fd87ed.htm" target="_blank" class="academic-link-colleague">蔡立</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="https://math.bit.edu.cn/szdw/jgml/sxx/fyy/index.htm" target="_blank" class="academic-link-colleague">范洋宇</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="https://faculty.sdu.edu.cn/lijianing/en/index.htm" target="_blank" class="academic-link-colleague">李加宁</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="http://staff.ustc.edu.cn/~yiouyang/" target="_blank" class="academic-link-colleague">欧阳毅</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="http://www.mcm.ac.cn/people/members/202012/t20201204_644494.html" target="_blank" class="academic-link-colleague">田野</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="https://xwzhu.xyz/" target="_blank" class="academic-link-colleague">朱秀武</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="https://zhangshenxing.github.io/" target="_blank" class="academic-link-colleague">张神星</a>
+                    </div>
+                </div>
+                <!-- 英文版本：对应中文名单，按姓氏首字母顺序排列 -->
+                <div class="english-content">
+                    <div class="colleagues-container">
+                        <a href="https://ams.cnu.edu.cn/english/People/Faculty/ed036a06808940889455279e07fd87ed.htm" target="_blank" class="academic-link-colleague">Li Cai</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="https://math.bit.edu.cn/szdw/jgml/sxx/fyy/index.htm" target="_blank" class="academic-link-colleague">Yangyu Fan</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="https://faculty.sdu.edu.cn/lijianing/en/index.htm" target="_blank" class="academic-link-colleague">Jianing Li</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="http://staff.ustc.edu.cn/~yiouyang/" target="_blank" class="academic-link-colleague">Yi Ouyang</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="http://www.mcm.ac.cn/people/members/202012/t20201204_644494.html" target="_blank" class="academic-link-colleague">Ye Tian</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="https://xwzhu.xyz/" target="_blank" class="academic-link-colleague">Xiuwu Zhu</a>
+                        <span class="colleague-separator">|</span>
+                        <a href="https://zhangshenxing.github.io/" target="_blank" class="academic-link-colleague">Shenxing Zhang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 全局访问次数统计 -->
+        <div class="counter-container">
+            <span class="chinese-content" style="display: none;">
+                <i class="fa fa-eye mr-1"></i>本站访问次数: 
+                <a href="https://www.hitwebcounter.com" target="_blank">
+                    <img src="https://hitwebcounter.com/counter/counter.php?page=10000000&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" class="visit-counter-img">
+                </a>
+            </span>
+            <span class="english-content">
+                <i class="fa fa-eye mr-1"></i>Visitors: 
+                <a href="https://www.hitwebcounter.com" target="_blank">
+                    <img src="https://hitwebcounter.com/counter/counter.php?page=21439039&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" class="visit-counter-img">
+                </a>
+            </span>
+        </div>
     </div>
-
-    <!-- 优化后的语言切换脚本 -->
+    <!-- 语言切换脚本 -->
     <script>
         function switchLanguage(lang) {
             // 隐藏所有内容
             document.querySelectorAll('.chinese-content, .english-content').forEach(el => {
                 el.style.display = 'none';
             });
-
             // 根据选择显示对应语言内容
             if (lang === 'zh-CN') {
                 document.querySelectorAll('.chinese-content').forEach(el => {
@@ -393,9 +538,10 @@
         }
         
         // 初始化显示英文
-        window.onload = () => switchLanguage('en-US');
+        window.onload = () => {
+            switchLanguage('en-US');
+        };
     </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
