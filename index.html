@@ -301,6 +301,24 @@
                 display: none;
             }
         }
+
+        /* 覆盖 Bootstrap 按钮颜色，与个人主页主题色一致 */
+        .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        .btn-outline-primary {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        .btn-outline-primary:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -433,6 +451,30 @@
                         </ul>
                     </li>
                 </ul>
+            </div>
+        </div>
+
+
+        <!-- 学术会议 -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title" data-zh="学术会议" data-en="Conference">学术会议</h2>
+                <div class="note-card p-3 mb-3">
+                    <h5>
+                        <span data-zh="数论与算术几何青年学者研讨会" data-en="Young Scholars Workshop on Number Theory and Arithmetic Geometry">数论与算术几何青年学者研讨会</span>
+                    </h5>
+                    <p>
+                        <i class="fa fa-calendar mr-1"></i> 
+                        <span data-zh="日期: 2026年4月20日" data-en="Date: April 20, 2026">日期: 2026年4月20日</span>
+                    </p>
+                    <p>
+                        <i class="fa fa-map-marker mr-1"></i> 
+                        <span data-zh="地点: 线上（腾讯会议）" data-en="Location: Online (Tencent Meeting)">地点: 线上（腾讯会议）</span>
+                    </p>
+                    <a href="meeting.html" class="btn btn-primary mt-2">
+                        <span data-zh="查看详细日程" data-en="View Schedule">查看详细日程</span>
+                    </a>
+                </div>
             </div>
         </div>
      
