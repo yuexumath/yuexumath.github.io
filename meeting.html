@@ -3,214 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数论及相关领域青年学者研讨会 - 会议日程</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <title>数论及相关领域青年学者研讨会 · 会议日程</title>
+    <meta name="description" content="数论及相关领域青年学者研讨会日程与报告摘要，2026 年 4 月 20 日线上举行，西安电子科技大学数学与统计学院主办。">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        try {
+            var t = localStorage.getItem('yx-theme');
+            if (t) { document.documentElement.setAttribute('data-theme', t); }
+            document.documentElement.setAttribute('data-effective',
+                t || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+        } catch (e) {}
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #7f8c8d;
-            --background-color: #f5f7fa;
-            --accent-color: #3498db;
-            --accent-light: #e3f2fd;
-            --separator-color: #e0e0e0;
-            --link-color: #6495ED;
-        }
-        body {
-            background-color: var(--background-color);
-            font-family: 'Georgia', 'Times New Roman', serif;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-            margin: 2rem auto;
-            padding: 2rem;
-            max-width: 1000px;
-        }
-        .section-title {
-            margin: 1.8rem 0 1.2rem;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #eee;
-        }
-        .back-link {
-            margin-top: 1rem;
-            display: inline-block;
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        .back-link:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px 12px;
-            vertical-align: top;
-        }
-        th {
-            background: #f8f8f8;
-            text-align: center;
-            font-weight: bold;
-            color: #333;
-        }
-        td:nth-child(1), td:nth-child(2) {
-            text-align: center;
-        }
-        .break-row td {
-            background: #fafafa;
-            text-align: center;
-            font-weight: bold;
-            color: #666;
-        }
-        .abstract {
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .speaker {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        .abstract-title {
-            font-weight: 600;
-            color: var(--primary-color);
-            background-color: #f0f2f5;
-            display: inline-block;
-            padding: 0.1rem 0.5rem;
-            border-radius: 4px;
-            font-style: normal;
-        }
-        .meeting-info {
-            margin-top: 2rem;
-            padding: 1rem 1.2rem;
-            background: #f8f8f8;
-            border-left: 3px solid var(--accent-color);
-            font-size: 14px;
-            line-height: 2;
-        }
-        .info-label {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-right: 8px;
-        }
-        .footer-logo {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #eee;
-        }
-        .footer-logo img {
-            max-height: 100px;
-            width: auto;
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.2rem;
-                margin: 1rem 0.5rem;
-            }
-            .section-title {
-                font-size: 1.3rem;
-            }
-            th, td {
-                padding: 6px 8px;
-                font-size: 12px;
-            }
-        }
-    </style>
 </head>
 <body>
-<div class="container">
-    <!-- 返回主页链接已注释
-    <div>
-        <a href="index.html" class="back-link">
-            <i class="fa fa-arrow-left"></i> 返回主页
-        </a>
-    </div>
-    -->
 
-    <div class="text-center mt-3">
-        <h1>数论及相关领域青年学者研讨会</h1>
-        <div class="d-flex justify-content-center flex-wrap gap-3 mt-3 text-secondary">
-            <span><i class="fa fa-calendar"></i> 2026年4月20日</span>
-            <span><i class="fa fa-video-camera"></i> 腾讯会议：135-437-762（密码：123321）</span>
+<!-- icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="6" width="13" height="12" rx="2"/><path d="m22 8-7 4 7 4V8Z"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></symbol>
+</svg>
+
+<canvas id="matrix-bg" aria-hidden="true"></canvas>
+
+<header class="site-nav">
+    <div class="nav-inner">
+        <a class="nav-brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true">YX</span>
+            <span class="brand-label">许跃</span>
+        </a>
+        <nav class="nav-links" aria-label="页面导航">
+            <a href="#schedule">会议日程</a>
+            <a href="#abstracts">报告摘要</a>
+        </nav>
+        <div class="nav-tools">
+            <button class="tool-btn" id="theme-btn" type="button" title="切换深浅色" aria-label="切换深浅色">
+                <svg class="ico ico-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+                <svg class="ico ico-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+            </button>
         </div>
     </div>
+</header>
 
-    <hr>
+<main class="page">
+    <section class="card">
+        <!-- 返回主页链接已注释
+        <a class="back-link" href="index.html">
+            <svg class="ico" aria-hidden="true"><use href="#i-back"/></svg> 返回主页
+        </a>
+        -->
 
-    <h2 class="section-title">会议日程</h2>
-    <table>
-        <thead>
-            <tr><th style="width:18%">时间</th><th style="width:25%">报告人</th><th>报告题目</th></tr>
-        </thead>
-        <tbody>
-            <tr class="break-row"><td colspan="3">08:55–09:00 会议准备</td></tr>
-            <tr><td>09:00–09:45</td><td>方江学（首都师范大学）</td><td>Galois representation of Drinfeld modules</td></tr>
-            <tr><td>09:50–10:35</td><td>王浩然（首都师范大学）</td><td>Homological branching for GL₂</td></tr>
-            <tr class="break-row"><td colspan="3">10:40–10:50 休息</td></tr>
-            <tr><td>10:50–11:35</td><td>范洋宇（北京理工大学）</td><td>p-adic Gross-Zagier formulae for supersingular elliptic curves</td></tr>
-            <tr><td>11:40–12:25</td><td>蔡立（首都师范大学）</td><td>Bessel distributions and Kloosterman integrals</td></tr>
-            <tr class="break-row"><td colspan="3">12:30–14:00 午休</td></tr>
-            <tr><td>14:00–14:45</td><td>杨金榜（中国科学技术大学）</td><td>A Lefschetz Theorem for Crystalline Representations</td></tr>
-            <tr><td>14:50–15:35</td><td>张神星（合肥工业大学）</td><td>具有最大弯曲分量的二次二项式向量函数</td></tr>
-            <tr class="break-row"><td colspan="3">15:40–15:50 休息</td></tr>
-            <tr><td>15:50–16:35</td><td>李加宁（山东大学）</td><td>Class groups of \( \mathbb{Q}(N^{1/p}) \) and related Eisenstein congruences</td></tr>
-        </tbody>
-    </table>
+        <div class="meeting-header">
+            <h1>数论及相关领域青年学者研讨会</h1>
+            <div class="meeting-facts">
+                <span><svg class="ico" aria-hidden="true"><use href="#i-calendar"/></svg> 2026年4月20日</span>
+                <span><svg class="ico" aria-hidden="true"><use href="#i-video"/></svg> 腾讯会议：135-437-762</span>
+            </div>
+        </div>
+    </section>
 
-    <h2 class="section-title">报告摘要</h2>
-    <div class="abstract">
-        <span class="speaker">方江学：</span> <span class="abstract-title">Galois representation of Drinfeld modules</span><br>
-        In this talk, we study the Galois representations attached to products of Drinfeld modules. As an analogue of Serre’s classical result on the images of Galois representations associated with products of elliptic curves, we prove that for any finite set of primes p, the image of the corresponding product representation is sufficiently large, in the sense that it is commensurable with a subgroup defined by a natural determinant condition. Our approach combines Pink’s minimal model theory for compact subgroups of linear groups over local fields with explicit reciprocity laws for global function fields.
-    </div>
-    <div class="abstract">
-        <span class="speaker">王浩然：</span> <span class="abstract-title">Homological branching for GL₂</span><br>
-        I will talk about the branching problem for mod p representations of GL₂(F), where F is a p-adic field. This is a joint work in progress with Yang Chen.
-    </div>
-    <div class="abstract">
-        <span class="speaker">范洋宇：</span> <span class="abstract-title">p-adic Gross-Zagier formulae for supersingular elliptic curves</span><br>
-        The p-adic Gross-Zagier formula— the p-adic analogue of the celebrated Gross-Zagier formula— relates the p-adic height of Heegner points to the derivative of p-adic Rankin series. It plays an essential role in the Iwasawa Main Conjecture for elliptic curves and the Birch-Swinnerton-Dyer Formula. In this talk, we report some recent progress regarding the p-adic Gross-Zagier formulae for supersingular elliptic curves. This work is partly based on joint work with Prof. Y. Tian and Dr. J. Pan.
-    </div>
-    <div class="abstract">
-        <span class="speaker">蔡立：</span> <span class="abstract-title">Bessel distributions and Kloosterman integrals</span><br>
-  In this talk, we shall give the germ expansions of  Kloosterman integrals. As an application, we prove that if Kloosterman integrals have nontrivial bounds for all split groups, then Bessel distributions are regular for all split groups.
-    </div>
-    <div class="abstract">
-        <span class="speaker">杨金榜：</span> <span class="abstract-title">A Lefschetz Theorem for Crystalline Representations</span><br>
-        As a corollary of nonabelian Hodge theory, Simpson proved a strong Lefschetz theorem for complex polarized variations of Hodge structure. In this talk, I will introduce an arithmetic analog. The primary technique is p-adic nonabelian Hodge theory. This is based on joint work with Raju Krishnamoorthy and Kang Zuo.
-    </div>
-    <div class="abstract">
-        <span class="speaker">张神星：</span> <span class="abstract-title">具有最大弯曲分量的二次二项式向量函数</span><br>
-        设 \(n=2m\), \(F(x)=x^{d_1}+x^{d_2}\in\mathbb{F}_{2^n}[x]\) 具有最多弯曲分量. 我们证明了: 当 \(2\) 进汉明权重 \(\mathrm{wt}_2(d_1),\mathrm{wt}_2(d_2)\le 2\) 时, 若 \(\ell(n):=\min\limits_{\gamma:\mathbb{F}_2(\gamma)=\mathbb{F}_{2^n}} \dim_{\mathbb{F}_2}\mathbb{F}_2[\sigma]\gamma >m\), 即 \(\mathbb{F}_{2^n}\) 任一生成元的Frobenius轨道的线性复杂度均大于 \(m\), 且 \(\gcd(d_1,d_2,2^m-1)>1\), 则 \(F(x)\) 等价于 \(x^{2^m+1}\) 或 \(x^{2^i}(x+x^{2^m})\). 我们还给出该条件下 \(F\) 的非线性性和差分均匀度的更好的下界. 本文与谢贤红、欧阳毅、程奇合作完成.
-    </div>
-    <div class="abstract">
-        <span class="speaker">李加宁：</span> <span class="abstract-title">Class groups of \( \mathbb{Q}(N^{1/p}) \) and related Eisenstein congruences</span><br>
-        Let \(K=\mathbb{Q}(N^{1/p})\), where p and N are two primes such that \(p \mid N+1\). Iimura proved in 1980s that \(p\) divides the class number of \(K\) using genus theory. In 2021, Lang-Wake gave a new proof by constructing a special newform of level \(N^2\) which cuts out a unramified cyclic of degree \(p\) extension of \(K\). If \(p^r\) divides \(N+1\) exactly, Lang-Wake further in 2025 shows that there exists exactly \(r\) such newforms. We show that these \(r\) newforms cut out the same unramified cyclic degree \(p\)-extension of \(K\), under the assumption that \(p\) is a regular prime. We will also talk about some results on the Eisenstein congruences.
-    </div>
+    <section class="card" id="schedule">
+        <h2 class="section-title">会议日程</h2>
+        <div class="table-wrap">
+            <table class="schedule">
+                <thead>
+                    <tr><th style="width:18%">时间</th><th style="width:25%">报告人</th><th>报告题目</th></tr>
+                </thead>
+                <tbody>
+                    <tr class="break-row"><td colspan="3">08:55–09:00 会议准备</td></tr>
+                    <tr><td>09:00–09:45</td><td>方江学（首都师范大学）</td><td>Galois representation of Drinfeld modules</td></tr>
+                    <tr><td>09:50–10:35</td><td>王浩然（首都师范大学）</td><td>Homological branching for GL₂</td></tr>
+                    <tr class="break-row"><td colspan="3">10:40–10:50 休息</td></tr>
+                    <tr><td>10:50–11:35</td><td>范洋宇（北京理工大学）</td><td>p-adic Gross-Zagier formulae for supersingular elliptic curves</td></tr>
+                    <tr><td>11:40–12:25</td><td>蔡立（首都师范大学）</td><td>Bessel distributions and Kloosterman integrals</td></tr>
+                    <tr class="break-row"><td colspan="3">12:30–14:00 午休</td></tr>
+                    <tr><td>14:00–14:45</td><td>杨金榜（中国科学技术大学）</td><td>A Lefschetz Theorem for Crystalline Representations</td></tr>
+                    <tr><td>14:50–15:35</td><td>张神星（合肥工业大学）</td><td>具有最大弯曲分量的二次二项式向量函数</td></tr>
+                    <tr class="break-row"><td colspan="3">15:40–15:50 休息</td></tr>
+                    <tr><td>15:50–16:35</td><td>李加宁（山东大学）</td><td>Class groups of \( \mathbb{Q}(N^{1/p}) \) and related Eisenstein congruences</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-    <div class="meeting-info">
-        <div><span class="info-label">组织者：</span> 许跃、张哲</div>
-        <div><span class="info-label">主办单位：</span> 西安电子科技大学数学与统计学院</div>
-    </div>
+    <section class="card" id="abstracts">
+        <h2 class="section-title">报告摘要</h2>
 
-    <div class="footer-logo">
-        <img src="logo.png" alt="会议Logo" onerror="this.style.display='none'">
-    </div>
-</div>
+        <div class="abstract">
+            <span class="speaker">方江学：</span> <span class="abstract-title">Galois representation of Drinfeld modules</span><br>
+            In this talk, we study the Galois representations attached to products of Drinfeld modules. As an analogue of Serre’s classical result on the images of Galois representations associated with products of elliptic curves, we prove that for any finite set of primes p, the image of the corresponding product representation is sufficiently large, in the sense that it is commensurable with a subgroup defined by a natural determinant condition. Our approach combines Pink’s minimal model theory for compact subgroups of linear groups over local fields with explicit reciprocity laws for global function fields.
+        </div>
+        <div class="abstract">
+            <span class="speaker">王浩然：</span> <span class="abstract-title">Homological branching for GL₂</span><br>
+            I will talk about the branching problem for mod p representations of GL₂(F), where F is a p-adic field. This is a joint work in progress with Yang Chen.
+        </div>
+        <div class="abstract">
+            <span class="speaker">范洋宇：</span> <span class="abstract-title">p-adic Gross-Zagier formulae for supersingular elliptic curves</span><br>
+            The p-adic Gross-Zagier formula— the p-adic analogue of the celebrated Gross-Zagier formula— relates the p-adic height of Heegner points to the derivative of p-adic Rankin series. It plays an essential role in the Iwasawa Main Conjecture for elliptic curves and the Birch-Swinnerton-Dyer Formula. In this talk, we report some recent progress regarding the p-adic Gross-Zagier formulae for supersingular elliptic curves. This work is partly based on joint work with Prof. Y. Tian and Dr. J. Pan.
+        </div>
+        <div class="abstract">
+            <span class="speaker">蔡立：</span> <span class="abstract-title">Bessel distributions and Kloosterman integrals</span><br>
+            In this talk, we shall give the germ expansions of Kloosterman integrals. As an application, we prove that if Kloosterman integrals have nontrivial bounds for all split groups, then Bessel distributions are regular for all split groups.
+        </div>
+        <div class="abstract">
+            <span class="speaker">杨金榜：</span> <span class="abstract-title">A Lefschetz Theorem for Crystalline Representations</span><br>
+            As a corollary of nonabelian Hodge theory, Simpson proved a strong Lefschetz theorem for complex polarized variations of Hodge structure. In this talk, I will introduce an arithmetic analog. The primary technique is p-adic nonabelian Hodge theory. This is based on joint work with Raju Krishnamoorthy and Kang Zuo.
+        </div>
+        <div class="abstract">
+            <span class="speaker">张神星：</span> <span class="abstract-title">具有最大弯曲分量的二次二项式向量函数</span><br>
+            设 \(n=2m\), \(F(x)=x^{d_1}+x^{d_2}\in\mathbb{F}_{2^n}[x]\) 具有最多弯曲分量. 我们证明了: 当 \(2\) 进汉明权重 \(\mathrm{wt}_2(d_1),\mathrm{wt}_2(d_2)\le 2\) 时, 若 \(\ell(n):=\min\limits_{\gamma:\mathbb{F}_2(\gamma)=\mathbb{F}_{2^n}} \dim_{\mathbb{F}_2}\mathbb{F}_2[\sigma]\gamma >m\), 即 \(\mathbb{F}_{2^n}\) 任一生成元的Frobenius轨道的线性复杂度均大于 \(m\), 且 \(\gcd(d_1,d_2,2^m-1)>1\), 则 \(F(x)\) 等价于 \(x^{2^m+1}\) 或 \(x^{2^i}(x+x^{2^m})\). 我们还给出该条件下 \(F\) 的非线性性和差分均匀度的更好的下界. 本文与谢贤红、欧阳毅、程奇合作完成.
+        </div>
+        <div class="abstract">
+            <span class="speaker">李加宁：</span> <span class="abstract-title">Class groups of \( \mathbb{Q}(N^{1/p}) \) and related Eisenstein congruences</span><br>
+            Let \(K=\mathbb{Q}(N^{1/p})\), where p and N are two primes such that \(p \mid N+1\). Iimura proved in 1980s that \(p\) divides the class number of \(K\) using genus theory. In 2021, Lang-Wake gave a new proof by constructing a special newform of level \(N^2\) which cuts out a unramified cyclic of degree \(p\) extension of \(K\). If \(p^r\) divides \(N+1\) exactly, Lang-Wake further in 2025 shows that there exists exactly \(r\) such newforms. We show that these \(r\) newforms cut out the same unramified cyclic degree \(p\)-extension of \(K\), under the assumption that \(p\) is a regular prime. We will also talk about some results on the Eisenstein congruences.
+        </div>
+
+        <div class="meeting-info">
+            <div><span class="info-label">组织者：</span>许跃、张哲</div>
+            <div><span class="info-label">主办单位：</span>西安电子科技大学数学与统计学院</div>
+        </div>
+
+    </section>
+</main>
+
+<script src="site.js"></script>
 </body>
 </html>
